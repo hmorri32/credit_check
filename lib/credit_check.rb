@@ -1,13 +1,15 @@
-
-class LuhnStuff
+class CreditCheck
+  attr_reader :valid
+  
   def initialize(cc_number)
     @cc_number = cc_number
+    @valid     = false
   end
 
   def splitter(string)
     string.split("")
   end
-
+ 
   def integers(arr)
     arr.map(&:to_i)
   end
@@ -35,12 +37,6 @@ class LuhnStuff
     by_two          = every_other_times_two(reversed)
     added_over_ten  = add_over_ten(by_two)
     total           = add_all_digits(added_over_ten)
-    puts total % 10 == 0 ? 'valid' : 'not'
+    puts total % 10 == 0 ? @valid = true : @valid
   end
 end
-
-
-
-# validate(card_number)
-# validate("342804633855673")
-# validate("342801633855673")
