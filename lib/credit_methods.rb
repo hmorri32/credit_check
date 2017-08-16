@@ -1,4 +1,4 @@
-class CreditMethods
+module CreditMethods
   def splitter(string)
     string.split("")
   end
