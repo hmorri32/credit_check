@@ -12,7 +12,7 @@ module CreditMethods
   end
 
   def every_other_times_two(arr)
-    arr.map.with_index {|num, i| i.odd? ? num * 2 : num }
+    arr.map.with_index { |num, i| i.odd? ? num * 2 : num }
   end
 
   def add_over_ten(arr)

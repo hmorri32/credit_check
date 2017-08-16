@@ -2,13 +2,14 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/credit_check'
 require './lib/credit_methods'
-include CreditMethods
 
 class UnitTests < Minitest::Test
+  include CreditMethods
+  
   def setup
-    @card    = CreditCheck.new("4929735477250543")
-    @amex1   = CreditCheck.new("342804633855673")
-    @amex2   = CreditCheck.new("342801633855673")
+    @card  = CreditCheck.new("4929735477250543")
+    @amex1 = CreditCheck.new("342804633855673")
+    @amex2 = CreditCheck.new("342801633855673")
   end
   
   def test_card_existence
